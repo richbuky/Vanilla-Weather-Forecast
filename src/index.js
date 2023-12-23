@@ -94,7 +94,5 @@ function displayForecast(response) {
 let Searchformelement = document.querySelector("#search-form");
 Searchformelement.addEventListener("submit", FormSubmit);
 
-Searchcity("Lagos");
-
-displayForecast();
+Searchcity("Ilorin");
 
