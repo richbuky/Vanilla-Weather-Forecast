@@ -49,7 +49,12 @@ function FormSubmit(event) {
 
   Searchcity(SearchInput.value);
 }
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "b2a5adcct04b33178913oc335f405433";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
   let days = ["Mon","Tue", "Wed", "Thu", "Fri"];
   let forecastHtml = "";
 
@@ -79,4 +84,3 @@ let Searchformelement = document.querySelector("#search-form");
 Searchformelement.addEventListener("submit", FormSubmit);
 
 Searchcity("Lagos");
-displayForecast();
