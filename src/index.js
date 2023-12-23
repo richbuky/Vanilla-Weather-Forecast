@@ -16,6 +16,8 @@ function updateWeather(response) {
   humidityelement.innerHTML = `${response.data.temperature.humidity}%,`;
   windspeedelement.innerHTML = `${response.data.wind.speed}km/hr`;
   temperatureelement.innerHTML = Math.round(temperature);
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -84,3 +86,6 @@ let Searchformelement = document.querySelector("#search-form");
 Searchformelement.addEventListener("submit", FormSubmit);
 
 Searchcity("Lagos");
+
+displayForecast();
+
